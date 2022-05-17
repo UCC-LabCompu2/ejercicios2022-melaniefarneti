@@ -1,3 +1,8 @@
+/**
+ * conversion de unidades de metros, yardas, pies y unidades
+ * @param (string) id = el id de los metros, yardas, pies y pulgadas
+ * @param (number) valor = el valor de los metros, yardas, pies y pulgadas
+ */
 
 function cambiarUnidades(id, valor){
     if(isNaN(valor)){
@@ -12,3 +17,17 @@ function cambiarUnidades(id, valor){
         document.lasUnidades.unid_yarda.value = 1.09361*valor;
     }
 }
+
+function convertirGR(id){
+    var grad, rad;
+    if(id=="grados"){
+        grad = document.getElementById( "grados").value;
+        rad = (grad*Math.PI)/180;
+    }else if(id=="radianes"){
+        rad = document.getElementById("radianes").value;
+        grad = (rad*180)/Math.PI;
+    }
+    document.getElementById("grados").value = grad;
+    document.getElementById("radianes").value = rad;
+}
+
