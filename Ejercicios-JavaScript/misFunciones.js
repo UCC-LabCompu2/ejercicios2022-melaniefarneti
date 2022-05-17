@@ -31,3 +31,18 @@ function convertirGR(id){
     document.getElementById("radianes").value = rad;
 }
 
+function mostrar_ocultar(valormo){
+    if(valormo== "val_mostrar"){
+        document.getElementById("divmo").style.display = "block";
+    }else if(valormo == "val_ocultar"){
+        document.getElementById("divmo").style.display = "none";
+    }
+}
+
+function calcularsuma(){
+    var num1, num2;
+    num1 = Number(document.getElementsByName("sum_num1")[0].value);
+    num2 = Number(document.getElementsByName("sum_num2")[0].value);
+    document.getElementsByName("sum_total")[0].value = num1+ Number(num2);
+}
+
