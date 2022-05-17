@@ -71,5 +71,20 @@ function calcularsuma(){
     document.getElementsByName("sum_total")[0].innerHTML = num1+ Number(num2);
 }
 
+function cargarweb(){
+    var cant, unidad, urlcomp;
+    cant = document.getElementById("distancia").value;
+    unidad = document.getElementsByName("unidades")[0].value;
+    urlcomp = "segundaWeb.html#" + cant + "#" + unidad;
+    window.open(urlcomp);
+}
 
+function cargarresultado(){
+    var urlcomp, cant, unidad;
+    urlcomp = window.location.href.split("/")[5];
+    cant = urlcomp.split("#")[1];
+    unidad = urlcomp.split("#")[2];
+
+    document.getElementById("dist").value = cant + " " + unidad;
+}
 
