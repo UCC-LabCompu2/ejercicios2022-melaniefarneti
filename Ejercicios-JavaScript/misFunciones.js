@@ -88,3 +88,18 @@ function cargarresultado(){
     document.getElementById("dist").value = cant + " " + unidad;
 }
 
+function guardarlocalstorage(){
+    let distancia, unidad;
+    distancia = document.getElementById("distancia").value;
+    unidad = document.getElementsByName("unidades")[0].value;
+    localStorage.setItem("distanciaLS", distancia);
+    localStorage.setItem("unidadesLS", unidad);
+    window.open("segundaWebcopia.html");
+}
+function cargarlocalstorage(){
+    let cantidad, unidad;
+    cantidad = localStorage.getItem("distanciaLS");
+    unidad = localStorage.getItem("unidadesLS");
+    document.getElementById("dist").value = cantidad + " " + unidad;
+}
+
