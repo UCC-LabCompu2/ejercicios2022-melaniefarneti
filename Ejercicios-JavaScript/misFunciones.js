@@ -139,3 +139,49 @@ function limpiarcanvas(){
 
     canvas.width = canvas.width;
 }
+
+function dibujarcuadriculado(){
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+
+    var alturaMax = canvas.height;
+    //dibujar lineas horizontales
+    ctx.beginPath();
+    for(var i=0; i<alturaMax;){
+    ctx.moveTo(0, i);
+    ctx.lineTo(1000, i);
+    ctx.strokeStyle = "#e3e0ec";
+    ctx.stroke();
+    i=i+20;
+    }
+    ctx.closePath();
+
+    //dibujar lineas verticales
+    ctx.beginPath();
+    var anchoMax = canvas.width;
+    for(var i=0; i<anchoMax;){
+        ctx.moveTo(i, 0);
+        ctx.lineTo(i, alturaMax);
+        ctx.strokeStyle = "#e3e0ec";
+        ctx.stroke();
+        i=i+20;
+    }
+    ctx.closePath();
+
+    //eje x
+    ctx.beginPath();
+    ctx.moveTo(0, alturaMax/2);
+    ctx.lineTo(anchoMax, alturaMax/2);
+    ctx.strokeStyle = "#d91c00";
+    ctx.stroke();
+    ctx.closePath();
+
+    //eje y
+    ctx.beginPath();
+    ctx.moveTo(anchoMax/2, 0);
+    ctx.lineTo(anchoMax/2, alturaMax);
+    ctx.strokeStyle = "#d91c00";
+    ctx.stroke();
+    ctx.closePath();
+
+}
